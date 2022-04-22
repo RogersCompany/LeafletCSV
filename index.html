@@ -35,6 +35,18 @@
     scrollWheelZoom: false,
     tap: false
   });
+  
+  map.on('click', function(e){
+    // Place marker
+    var marker = new L.marker(e.latlng).addTo(map);
+
+    // Ajax query to save the values:
+    var data = {
+        lat: e.latlng.lat,
+        lng: e.latlng.lng
+    }
+    marker.addTo(map);
+  });
 
   /* Control panel to display map layers */
   var controlLayers = L.control.layers( null, null, {
