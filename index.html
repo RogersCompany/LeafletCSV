@@ -35,6 +35,14 @@
     scrollWheelZoom: false,
     tap: false
   });
+    
+    // Asynchronously:
+const fs = require('./data.csv');
+
+fs.appendFile('message.txt', 'data to append', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
   
   map.on('click', function(e){
     // Place marker
@@ -87,6 +95,9 @@
     }
 
   });
+    
+
+
 
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
