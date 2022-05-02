@@ -37,15 +37,6 @@
     scrollWheelZoom: false,
     tap: false
   });
-    
-	// Asynchronously:
-	const fs = require('fs');
-
-  fs.appendFile('data.csv', 'data to append', function (err) {
-	if (err) throw err;
-	console.log('Saved!');
-  });
-
   
   map.on('click', function(e){
     // Place marker
